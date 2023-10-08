@@ -19,7 +19,11 @@ const CardList: FC<CardListProps> = ({ cards, activeClassesStyle }) => {
       }
     >
       {cards?.map((card) => (
-        <MyCard key={card._id} card={card} />
+        <MyCard
+          key={card._id}
+          card={card}
+          activeClassesStyle={activeClassesStyle}
+        />
       ))}
     </div>
   )
