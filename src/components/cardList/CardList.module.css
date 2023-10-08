@@ -1,0 +1,10 @@
+.cardListGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.cardListRow {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,23 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+  font-family: Hind, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color: #323c46;
+  background-color: #ffffff;
+  /* height: 100vh; */
+}
+
+.loginLayout {
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.dashboardLayout {
+  background-color: #f9f9fb;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
