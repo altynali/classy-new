@@ -14,16 +14,16 @@ const SwitcherList: FC<SwitcherListProps> = ({ active }) => {
       fill="none"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M32 0H56V24H32V0Z"
         stroke="black"
-        stroke-opacity="0.01"
-        stroke-width="0"
+        strokeOpacity="0.01"
+        strokeWidth="0"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M36 18H53V12H36V18ZM36 5V11H53V5H36Z"
         fill={active ? "#323C46" : "#D9DCE1"}
       />

@@ -1,3 +1,15 @@
 .container {
   display: flex;
 }
+
+.containerImg {
+  height: 100vh;
+}
+
+.containerImg {
+  object-fit: cover;
+}
+
+.containerChild {
+  width: 100%;
+}

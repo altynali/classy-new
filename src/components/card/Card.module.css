@@ -80,15 +80,8 @@
   align-items: center;
 }
 
-.card_active > button {
-  width: 100px;
+.card_btn {
   border-radius: 4px;
-  background: #22d486;
-}
-
-.card_joinBtn {
-  border-radius: 4px;
-  background: #22d486;
   width: 100px;
   height: 32px;
   border: none;
@@ -99,4 +92,12 @@
   line-height: 16px; /* 114.286% */
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+.card_joinBtn {
+  background: #22d486;
+}
+
+.card_joinBtn_disabled {
+  background: #d9dce1;
 }

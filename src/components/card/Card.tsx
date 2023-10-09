@@ -1,15 +1,19 @@
-import { FC } from "react"
+import { FC, MouseEvent, useState } from "react"
 import { CardType } from "./types"
 import classes from "./Card.module.css"
 import transformedDate from "../../utils/transformedDate"
 import { NavLink } from "react-router-dom"
+import { attendenceUtil } from "../../utils/attendenceUtil"
+import { getStorageValue } from "../../utils/storage/storage"
+import { LSEnum } from "../../utils/login/keys"
 
 type CardProps = {
   card: CardType
-  activeClassesStyle: string
+  activeClassesStyle?: string
+  refresh?: () => void
 }
 
-const MyCard: FC<CardProps> = ({ card, activeClassesStyle }) => {
+const MyCard: FC<CardProps> = ({ card, activeClassesStyle, refresh }) => {
   const {
     _id,
     attendees,
@@ -22,14 +26,25 @@ const MyCard: FC<CardProps> = ({ card, activeClassesStyle }) => {
     // location,
     no_of_places,
   } = card
+  const firstName = getStorageValue(LSEnum.FirstName)
+
+  const [isAttendent, setIsAttendent] = useState<boolean>(
+    attendees.includes(firstName)
+  )
 
   const resultDate = transformedDate(date)
-
-  const rowIsActive = classes.card_dateOrdered // zmena orderu v row display
-
+  const rowIsActive = classes.card_dateOrdered
   const activeStyle = activeClassesStyle === "switcherGrid"
 
-  // card_row card_containerRow rowIsActive card_activeRow
+  const attendenceHandler = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+
+    attendenceUtil(isAttendent, _id, firstName).then(() => {
+      refresh?.()
+      const isPersonAttendent = attendees.includes(firstName)
+      setIsAttendent(isPersonAttendent)
+    })
+  }
 
   return (
     <NavLink
@@ -59,8 +74,16 @@ const MyCard: FC<CardProps> = ({ card, activeClassesStyle }) => {
         <span>
           {attendees.length}/{no_of_places}
         </span>
-        <button className={classes.card_joinBtn}>Edit</button>
-        {/* connected to with account */}
+        <button
+          className={`${classes.card_btn} ${
+            attendees.length.toString() >= no_of_places && !isAttendent
+              ? classes.card_joinBtn_disabled
+              : classes.card_joinBtn
+          }`}
+          onClick={attendenceHandler}
+        >
+          {isAttendent ? "Leave" : "Join"}
+        </button>
       </div>
     </NavLink>
   )

@@ -10,16 +10,3 @@ export type CardType = {
   created_by_name: string
   create_date: string
 }
-
-export const initCardObj = {
-  _id: "",
-  classname: "",
-  description: "",
-  date: "",
-  attendees: [],
-  location: "",
-  no_of_places: "",
-  created_by: "",
-  created_by_name: "",
-  create_date: "",
-}

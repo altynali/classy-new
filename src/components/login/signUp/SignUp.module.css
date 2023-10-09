@@ -1,3 +1,61 @@
 .form {
-  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  color: #bab8b8;
+  width: 480px;
+}
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.heading > p {
+  color: #949ea8;
+  margin: 0;
+}
+
+.title {
+  font-size: 28px;
+  color: #323c46;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+/* .input_container {
+  position: relative;
+} */
+
+.input {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #323c46;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d9dce1;
+}
+
+/* .handleBtn {
+  position: absolute;
+  background-color: #323c46;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+} */
+
+.contBtn {
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.btn {
+  background-color: #22d486;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 240px;
 }

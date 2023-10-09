@@ -1,5 +1,6 @@
-import classyApi from "../config/axiosConfig"
-import { setStorageValue } from "./storage/storage"
+import classyApi from "../../config/axiosConfig"
+import { setStorageValue } from "../storage/storage"
+import { LSEnum } from "./keys"
 
 const signUpUtil = async (
   firstName: string,
@@ -16,7 +17,9 @@ const signUpUtil = async (
       password,
     })
 
-    setStorageValue(response.data._id, "auth_id")
+    setStorageValue(response.data._id, LSEnum.AuthId)
+    setStorageValue(response.data.first_name, LSEnum.FirstName)
+    setStorageValue(response.data.last_name, LSEnum.LastName)
   }
 }
 

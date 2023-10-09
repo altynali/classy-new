@@ -1,3 +1,72 @@
 .form {
-  border: 1px solid;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  color: #bab8b8;
+  width: 480px;
+}
+
+.heading {
+  margin-bottom: 32px;
+}
+
+.heading > p {
+  margin: 0;
+  color: #949ea8;
+}
+
+.title {
+  color: #323c46;
+  font-size: 28px;
+  margin: 0;
+  margin-bottom: 6px;
+}
+
+.input_container {
+  position: relative;
+}
+
+.input {
+  color: #323c46;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #d9dce1;
+}
+
+/* input#password {
+  position: relative;
+}
+
+input#password::after {
+  position: absolute;
+  background-color: red;
+  width: 3px;
+  height: 3px;
+} */
+
+/* .handleBtn {
+  position: absolute;
+  background-color: #323c46;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+} */
+
+.contBtn {
+  width: 100%;
+  text-align: center;
+  margin-top: 32px;
+}
+
+.btn {
+  background-color: #22d486;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  width: 240px;
 }

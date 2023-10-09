@@ -13,11 +13,15 @@ const fetchClasses = async () => {
 const useFetchClasses = () => {
   const [data, setData] = useState(null)
 
+  const refresh = () => {
+    fetchClasses().then((data) => setData(data))
+  }
+
   useEffect(() => {
     fetchClasses().then((data) => setData(data))
   }, [])
 
-  return data
+  return { data, refresh }
 }
 
 export default useFetchClasses

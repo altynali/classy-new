@@ -1,21 +1,27 @@
 import { useState } from "react"
-// import classes from "./Login.module.css"
+import LoginLayout from "../../components/layout/LoginLayout/LoginLayout"
+import classes from "./Login.module.css"
 import SignIn from "../../components/login/signIn/SignIn"
 import SignUp from "../../components/login/signUp/SignUp"
-import LoginLayout from "../../components/layout/LoginLayout/LoginLayout"
-
 const Login = () => {
   const [signIn, setSignIn] = useState<boolean>(true)
 
   return (
     <LoginLayout>
-      <div>
-        {signIn ? "Don’t have account?" : "Already have an account? SIGN IN"}
-        <button onClick={() => setSignIn(!signIn)}>
-          {signIn ? "SIGN UP" : "SIGN IN"}
-        </button>
+      <div className={classes.login}>
+        <div className={classes.login_container}>
+          <h4>{signIn ? "Don’t have account?" : "Already have an account?"}</h4>
+          <button
+            className={classes.loginBtn}
+            onClick={() => setSignIn(!signIn)}
+          >
+            {signIn ? "SIGN UP" : "SIGN IN"}
+          </button>
+        </div>
+        <div className={classes.login_section}>
+          {signIn ? <SignIn /> : <SignUp />}
+        </div>
       </div>
-      {signIn ? <SignIn /> : <SignUp />}
     </LoginLayout>
   )
 }

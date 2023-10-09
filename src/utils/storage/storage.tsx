@@ -1,3 +1,5 @@
+import { LSEnum } from "../login/keys"
+
 export const getStorageValue = (key: string) => {
   const storedValue = localStorage.getItem(key)
 
@@ -17,3 +19,10 @@ export const setStorageValue = (value: string, key: string) => {
   }
 }
 
+export const clearStorage = () => {
+  localStorage.removeItem(LSEnum.AuthId)
+  localStorage.removeItem(LSEnum.FirstName)
+  localStorage.removeItem(LSEnum.LastName)
+
+  localStorage.clear()
+}
